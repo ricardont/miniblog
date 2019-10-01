@@ -8,17 +8,12 @@ end
 
 Then("The content should be {string}") do |string|
   expect(@post.content).to eq(string)
-  #p  @post.content
 end
 
-Given("a new Post with recipent") do
-  pending # Write code here that turns the phrase above into concrete actions
+When("I create a posts with the recipient {int}") do |int|
+  @post.update_attribute(:recipient, int)
 end
 
-When("I create a posts with the recipent nil") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("The recipent should be nil") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("The recipient should be {int}") do |int|
+  expect(@post.recipient).to eq(int)
 end

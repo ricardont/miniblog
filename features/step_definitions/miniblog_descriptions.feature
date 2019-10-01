@@ -8,8 +8,5 @@ Feature: Mini Blog Derscriptions
 		Given a new Post
 		When I create a posts with the content "New post"
 		Then The content should be "New post"
-    
-	Scenario: New Post with recipient
-		Given a new Post with recipient
 		When I create a posts with the recipient 1
 		Then The recipient should be 1

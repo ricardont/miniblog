@@ -7,9 +7,9 @@ Feature: Mini Blog Derscriptions
 	Scenario: Posting succesfully 
 		Given a new Post
 		When I create a posts with the content "New post"
-		Then The content should be "New posts"
+		Then The content should be "New post"
     
-	Scenario: New Post with recipent
-		Given a new Post with recipent
-		When I create a posts with the recipent nil
-		Then The recipent should be nil
+	Scenario: New Post with recipient
+		Given a new Post with recipient
+		When I create a posts with the recipient 1
+		Then The recipient should be 1

@@ -7,7 +7,8 @@ When("I create a posts with the content {string}") do |string|
 end
 
 Then("The content should be {string}") do |string|
-  @post.content.shoild string
+  expect(@post.content).to eq(string)
+  #p  @post.content
 end
 
 Given("a new Post with recipent") do

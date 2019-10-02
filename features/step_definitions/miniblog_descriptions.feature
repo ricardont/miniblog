@@ -6,7 +6,7 @@ Feature: Mini Blog Derscriptions
 	@wip
 	Scenario: Posting succesfully 
 		Given a new Post
-		When I create a posts with the content "New post"
+		When I create a post with the content "New post"
 		Then The content should be "New post"
-		When I create a posts with the recipient 1
-		Then The recipient should be 1
+		When I create a post with the recipient_id 1
+		Then The recipient_id should be 1

@@ -3,15 +3,20 @@ class PostsController < ApplicationController
   end
   def create
   	@post = Post.new(post_params)
-  	if @post.save 
-  		redirect_to :action => 'index'
+  	if @post.save
+      flash.now[:sucess] = "Post created"
+  		render :action => 'index'
   	else
   		flash.now[:error] = "Error saving post"
   		render :action => 'new'
   	end 
   end
+
+  def new
+    @post = Post.new
+  end 
   def destroy 
-  	 @post = Post.find(params[:id]) 
+  	@post = Post.find(params[:id]) 
   	if @post
   		@post.destroy
   	else

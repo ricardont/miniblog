@@ -1,0 +1,54 @@
+
+An error occurred while loading ./:type.
+Failure/Error: __send__(method, file)
+
+LoadError:
+  cannot load such file -- /home/ricky/rails/miniblog/:type
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/configuration.rb:2053:in `load'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/configuration.rb:2053:in `load_file_handling_errors'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/configuration.rb:1560:in `block in load_spec_files'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/configuration.rb:1558:in `each'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/configuration.rb:1558:in `load_spec_files'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/runner.rb:98:in `setup'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/runner.rb:86:in `run'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/runner.rb:71:in `run'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/runner.rb:45:in `invoke'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/exe/rspec:4:in `<top (required)>'
+# /home/ricky/.rvm/gems/ruby-2.4.0/bin/rspec:23:in `load'
+# /home/ricky/.rvm/gems/ruby-2.4.0/bin/rspec:23:in `<main>'
+# /home/ricky/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:24:in `eval'
+# /home/ricky/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:24:in `<main>'
+# 
+#   Showing full backtrace because every line was filtered out.
+#   See docs for RSpec::Configuration#backtrace_exclusion_patterns and
+#   RSpec::Configuration#backtrace_inclusion_patterns for more information.
+
+An error occurred while loading ./=.
+Failure/Error: __send__(method, file)
+
+LoadError:
+  cannot load such file -- /home/ricky/rails/miniblog/=
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/configuration.rb:2053:in `load'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/configuration.rb:2053:in `load_file_handling_errors'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/configuration.rb:1560:in `block in load_spec_files'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/configuration.rb:1558:in `each'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/configuration.rb:1558:in `load_spec_files'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/runner.rb:98:in `setup'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/runner.rb:86:in `run'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/runner.rb:71:in `run'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/lib/rspec/core/runner.rb:45:in `invoke'
+# /home/ricky/.rvm/gems/ruby-2.4.0/gems/rspec-core-3.8.2/exe/rspec:4:in `<top (required)>'
+# /home/ricky/.rvm/gems/ruby-2.4.0/bin/rspec:23:in `load'
+# /home/ricky/.rvm/gems/ruby-2.4.0/bin/rspec:23:in `<main>'
+# /home/ricky/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:24:in `eval'
+# /home/ricky/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:24:in `<main>'
+# 
+#   Showing full backtrace because every line was filtered out.
+#   See docs for RSpec::Configuration#backtrace_exclusion_patterns and
+#   RSpec::Configuration#backtrace_inclusion_patterns for more information.
+No examples found.
+
+
+Finished in 0.00033 seconds (files took 0.39006 seconds to load)
+0 examples, 0 failures, 2 errors occurred outside of examples
+

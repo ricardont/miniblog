@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller, controllers: true  do 
-  before(:all) { Post.destroy_all }
-  describe "GET #index" do
+  #before(:all) { @new_post = Post.create( content:'content')}
+  after(:all) { Post.destroy_all }
+  #before(:all) { Post.destroy_all }
+  describe "`ET #index" do
     it "returns http success" do
       get :index
       expect(response).to have_http_status(:success)
@@ -19,16 +21,9 @@ RSpec.describe PostsController, type: :controller, controllers: true  do
       end
     end
   end 
-  
   describe "POSTS Delete" do
-    let(:post_new) { FactoryBot.create(:post) }  
+    pending "dont know how to test this"
     it 'it redirects to posts index' do
-      pending "dont know how to test this"
-      #@post_new = Post.find(1)
-      #delete :destroy, id: @post_new.id
-      delete :destroy, id: post_new
-      #post :destroy, :params => { :delete => { :id => @post_new.id } }
-      expect(response).to render_template('index')
     end
   end
 end

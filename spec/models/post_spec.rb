@@ -12,5 +12,9 @@ RSpec.describe Post, type: :model, models: true  do
   it "update content" do
     @new_post.update(content:'new content')
     expect(@new_post.content).to eq 'new content'
-  end
+  end  
+  it "create with empty content" do
+    #Post.create(content:'')
+    #expect(@new_post.content).to eq 'new content'
+  end  
 end

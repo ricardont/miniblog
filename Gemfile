@@ -10,6 +10,7 @@ gem 'rails', '~> 5.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
+gem 'bootstrap-generators', '~> 3.3.4'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -35,14 +36,13 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
+gem "cucumber-rails", :require => false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3'
   gem 'webdrivers', '~> 4.0'
   gem "rspec-rails"
-  gem "cucumber-rails"
   gem 'database_cleaner'
   gem "webrat"
   gem 'capybara', '>= 2.15'
@@ -67,3 +67,6 @@ group :test do
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'jquery-rails'
+gem 'bootstrap-sass'
+gem 'bootstrap_form'

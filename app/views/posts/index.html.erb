@@ -1,5 +1,5 @@
-<br>
-<% if user_signed_in? %>
+<div id="post_cont" class="container" >
+  <% if user_signed_in? %>
   <%= link_to 'New Post', new_post_path %>
   <p id="notice"><%= notice %></p>
     <% @posts.each do |post| %>
@@ -11,11 +11,13 @@
           <!-- <td><%= post.media %></td> -->
           <!-- <td><%= post.recipient_id %></td> -->
           <%= link_to 'Show', post , class:'card-link'%>
-          <%= link_to 'Edit', edit_post_path(post) , class:'card-link'%>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } , class:'card-link'%>
+          <% if current_user.id == post.user_id %>
+            <%= link_to 'Edit', edit_post_path(post) , class:'card-link'%>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } , class:'card-link'%>
+          <% end %>
         </div>
       </div>      
     <% end %>
   <% end %>
-
+</div>
 

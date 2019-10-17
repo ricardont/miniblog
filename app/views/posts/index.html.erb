@@ -1,19 +1,31 @@
-<br>
-<%= link_to 'New Post', new_post_path %>
-<p id="notice"><%= notice %></p>
-  <% @posts.each do |post| %>
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Post id:<%= post.id %></h4>
-        <h5 class="card-subtitle mb-2 text-muted">Card subtitle</h5>
-        <p class="card-text"><%= post.content %></p>
-        <!-- <td><%= post.media %></td> -->
-        <!-- <td><%= post.recipient_id %></td> -->
-        <%= link_to 'Show', post , class:'card-link'%>
-        <%= link_to 'Edit', edit_post_path(post) , class:'card-link'%>
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } , class:'card-link'%>
-      </div>
-    </div>      
-  <% end %>
+<div id="post_cont" class="container" >
+  <% if user_signed_in? %>
+  <%= link_to 'New Post', new_post_path %>
+  <p id="notice"><%= notice %></p>
+    <% @posts.each do |post| %>
+      <div class="card">
+        <div class="card-body">
+          <div class = "row card_head">
+            <div class="col-md-1 profile_pic_cont">
+               <img class="profile_pic" src="https://i.pinimg.com/600x315/24/23/93/242393e70e9f431d3d10ebaa48d76806.jpg">
+            </div> 
+            <div class="col-md-11">
+              <h4 class="card-user"><%= User.find(post.user_id).name %></h4>
+              <h5 class="card-subtitle mb-2 text-muted"><%= post.updated_at.to_s %></h5>
+            </div> 
+          </div> 
 
+          <p class="card-text"><%= post.content %></p>
+          <!-- <td><%= post.media %></td> -->
+          <!-- <td><%= post.recipient_id %></td> -->
+          <%= link_to 'Show', post , class:'card-link'%>
+          <% if current_user.id == post.user_id %>
+            <%= link_to 'Edit', edit_post_path(post) , class:'card-link'%>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } , class:'card-link'%>
+          <% end %>
+        </div>
+      </div>      
+    <% end %>
+  <% end %>
+</div>
 

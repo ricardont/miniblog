@@ -13,7 +13,7 @@
     <!-- <td><%= post.media %></td> -->
     <!-- <td><%= post.recipient_id %></td> -->
     <% unless view == 'show' %>
-     <%= link_to 'Show', post , class:'card-link'%>
+      <%= link_to 'Show', post , class:'card-link'%>
     <% end %>
     <% if current_user.id == post.user_id %>
       <%= link_to 'Edit', edit_post_path(post) , class:'card-link'%>

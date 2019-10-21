@@ -6,13 +6,13 @@
       </div> 
       <div class="col-md-11">
         <h4 class="card-user"><%= User.find(post.user_id).name %></h4>
-        <h5 class="card-subtitle mb-2 text-muted"><%= post.updated_at %></h5>
+        <h5 class="card-subtitle mb-2 text-muted update_date"><%= post.updated_at %></h5>
       </div> 
     </div> 
     <p class="card-text"><%= post.content %></p>
     <!-- <td><%= post.media %></td> -->
     <!-- <td><%= post.recipient_id %></td> -->
-    <% unless view == 'show' %>
+  <% unless view == 'show' %>
       <%= link_to 'Show', post , class:'card-link'%>
     <% end %>
     <% if current_user.id == post.user_id %>

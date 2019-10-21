@@ -14,5 +14,13 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require posts
 //= require_tree .
 
+$(document).ready(function(){
+	$(".update_date").each(function(e){
+		value_utc= $(this).text();
+		localDate = moment(value_utc).local().format("LL - LT");
+		$(this).text(localDate);
+	});
+});

@@ -21,9 +21,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
+  adapter: postgresql
   host: ENV["db_host"]
   database: ENV["db_database"]
   user: ENV["db_user"]
-  port: "5432"
+  port: 5432
   password: ENV["db_password"]

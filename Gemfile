@@ -45,11 +45,11 @@ group :development, :test do
   gem 'database_cleaner'
   gem "webrat"
   gem 'capybara', '>= 2.15'
-  gem "factory_bot_rails"
+
   gem "better_errors"
     gem "binding_of_caller"
 end
-
+gem "factory_bot_rails"
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'

@@ -22,4 +22,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  host: ENV["db_host"]
+  database: ENV["db_database"]
+  user: ENV["db_user"]
+  port: "5432"
+  password: ENV["db_password"]

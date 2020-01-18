@@ -5,7 +5,7 @@
          <img class="profile_pic" src="https://i.pinimg.com/600x315/24/23/93/242393e70e9f431d3d10ebaa48d76806.jpg">
       </div> 
       <div class="col-md-11">
-        <h4 class="card-user"><%= User.find(post.user_id).name %></h4>
+        <h4 class="card-user"><%= post.user.name %></h4>
         <h5 class="card-subtitle mb-2 text-muted update_date"><%= post.updated_at %></h5>
       </div> 
     </div> 
@@ -14,10 +14,6 @@
     <!-- <td><%= post.recipient_id %></td> -->
   <% unless view == 'show' %>
       <%= link_to 'Show', post , class:'card-link'%>
-    <% end %>
-    <% if current_user.id == post.user_id %>
-      <%= link_to 'Edit', edit_post_path(post) , class:'card-link'%>
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } , class:'card-link'%>
     <% end %>
   </div>
 </div>      

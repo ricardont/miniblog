@@ -1,9 +1,14 @@
-<div class="post_cont" >
+<div class="post_cont" id="room">
   <% if user_signed_in? %>
     <p id="notice"><%= notice %></p>
-    <%= link_to 'New Post', new_post_path %>
-    <% @posts.each do |p| %>
-      <%= render partial:"shared/post", locals: { post: p, view: 'index'}  %>
+    <%= render partial: 'posts/form', locals: {post: @post}%>
+    <!-- <%= link_to 'New Post', new_post_path %> -->
+    <% if @posts.any? %>
+    <div  id="posts">
+      <% @posts.each do |p| %>
+        <%= render partial:"shared/post", locals: { post: p, view: 'index'}  %>
+      <% end %>
+    </div> 
     <% end %>
   <% end %>
 </div>

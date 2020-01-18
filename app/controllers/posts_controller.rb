@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @post = Post.new
   end
 
   # GET /posts/1
@@ -23,21 +24,37 @@ class PostsController < ApplicationController
 
   # POST /posts
   # POST /posts.json
+  # def create
+  #   @post = current_user.posts.new(post_params) 
+  #   respond_to do |format|
+  #     if @post.save
+  #       #format.html { redirect_to @post, notice: 'Post was successfully created.' }
+  #       format.html { redirect_to action: "index", notice: 'Post was successfully created.' }
+  #       format.json { render :show, status: :created, location: @post }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @post.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
   def create
-    @post = current_user.posts.new(post_params) 
-
-    respond_to do |format|
-      if @post.save
-        #format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.html { redirect_to action: "index", notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    post = current_user.posts.new(post_params)
+    post.user = current_user
+    if post.save
+      ActionCable.server.broadcast 'posts',
+        html: html(post),
+        content: post.content,
+        updated_at: post.updated_at,
+        user: post.user
+      head :ok
     end
   end
-
+  def html(post)
+    ApplicationController.render(
+      partial: 'shared/post',
+      locals: { post: post, view:'index'  }
+    )
+  end
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update

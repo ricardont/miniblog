@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require posts
+//= require_tree ./channels
 //= require_tree .
 
 $(document).ready(function(){

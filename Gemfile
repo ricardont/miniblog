@@ -51,6 +51,7 @@ group :development, :test do
     gem "binding_of_caller"
 end
 gem "factory_bot_rails"
+gem 'redis', '~> 3.0'
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
